@@ -80,8 +80,6 @@ direction_t execute_attacker_strategy(
     {
       mov = 8 + COIN;
     }
-
-    mov = rand() % 4 == 0;
     LAST_DIRECTION_MOVED_ATTACKER = mov;
     return direction_list[mov];
   }
