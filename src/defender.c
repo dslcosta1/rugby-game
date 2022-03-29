@@ -15,6 +15,7 @@
 #define UNUSED(x) (void)(x) // Auxiliary to avoid error of unused parameter
 
 // Global Variables
+//#define TURN_DEFENDER       (int) 0;
 int TURN_DEFENDER = 0;
 int LAST_DIRECTION_MOVED_DEFENDER = -1;
 position_t LAST_POSITION_DEFENDER = {-1, -1};
@@ -83,12 +84,12 @@ direction_t execute_defender_strategy(
 
     if ((int)POSITION_ATTACKER_SPY.i > (int)defender_position.i)
     {
-      direction_list_spy[2] = DIR_UP;
+      direction_list_spy[2] = direction_list_spy[1];
     }
 
     if ((int)POSITION_ATTACKER_SPY.i < (int)defender_position.i)
     {
-      direction_list_spy[1] = DIR_DOWN;
+      direction_list_spy[1] = direction_list_spy[2];
     }
 
     mov = rand() % 4 == 0;
